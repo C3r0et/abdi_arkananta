@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FreeFolio - ABDI ARKANANTA SATYA S.</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .image-cropper {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+        .immg {
+            display: inline;
+            margin: 0 auto;
+            height: 100%;
+            width: auto;
+        }
+
+        .zoomA {
+            /* (A) OPTIONAL DIMENSIONS */
+            width: 600px;
+            height: auto;
+
+            /* (B) ANIMATE ZOOM */
+            /* ease | ease-in | ease-out | linear */
+            transition: transform ease-in-out 0.3s;
+        }
+
+        /* (C) ZOOM ON HOVER */
+        .zoomA:hover {
+            transform: scale(1.2);
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 99;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 75%;
+            max-width: 75%;
+        }
+
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(1)
+            }
+
+            to {
+                -webkit-transform: scale(2)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.4)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        @-webkit-keyframes zoom-out {
+            from {
+                transform: scale(1)
+            }
+
+            to {
+                transform: scale(0)
+            }
+        }
+
+        @keyframes zoom-out {
+            from {
+                transform: scale(1)
+            }
+
+            to {
+                transform: scale(0)
+            }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+
+    <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Navbar Start -->
+    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
+        <a href="index.html" class="navbar-brand ml-lg-3">
+            <h1 class="m-0 display-5"><span class="text-primary">Free</span>Folio</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+                <a href="#home" class="nav-item nav-link active">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#qualification" class="nav-item nav-link">Quality</a>
+                <a href="#contact" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Video Modal Start -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- 16:9 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                            allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
+                    <img class="img-fluid rounded-circle shadow-sm"
+                        style="object-fit: cover; height: 420px; width: 500px;" src="img/1.jpg" alt="">
+                </div>
+                <div class="col-lg-7 text-center text-lg-left">
+                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>
+                    <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #ffffff;">
+                        Abdi Arkananta</h1>
+                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
+                    <div class="typed-text d-none">Web Developer, Front End Developer Using Framework, Back End
+                        Developer, Network Engineering</div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+                        <a href="https://drive.google.com/uc?id=1jX7FwloQFTk7NdKeJSvum2lA-AaZKv8e&export=download" class="btn btn-outline-light mr-5">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="about">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
+                <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 pb-4 pb-lg-0">
+                    <img class="img-fluid rounded" style="object-fit: cover; height: 420px; width: 500px;"
+                        src="img/1.jpg" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <h3 class="mb-4">Web Developer</h3>
+                    <p style="text-align: justify;">Hello, I'm Abdi Arkananta Satya Sancoko, I'm usually called Abdi,
+                        I'm a web developer, especially on the backend. my biggest project is creating an asset
+                        management system for a company. My skills are in the field of programming with PHP, JavaScript,
+                        Python, CSS, and HTML and in the field of network configuration of Mikrotik, Cisco, and
+                        configuration of web server needs. I have attended MTCNA certification training, Programming
+                        Analysis, and training from DICODING.</p>
+                    <div class="row mb-3">
+                        <div class="col-sm-6 py-2">
+                            <h6>Name: <span class="text-secondary">Abdi Arkananta Satya S.</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Birthday: <span class="text-secondary">19 September 2001</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Degree: <span class="text-secondary">Master</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Experience: <span class="text-secondary">5 Years</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Phone: <span class="text-secondary">+6289699964780</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Email: <span class="text-secondary">abdi.arkananta123@gmail.com</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Address: <span class="text-secondary">Lidah Wetan Gg.11 Rt.3 Rw.6 Kec.Lakarsantri
+                                    Surabaya</span></h6>
+                        </div>
+                        <div class="col-sm-6 py-2">
+                            <h6>Freelance: <span class="text-secondary">Available</span></h6>
+                        </div>
+                    </div>
+                    <!-- <a href="" class="btn btn-outline-primary mr-4">Hire Me</a>
+                    <a href="" class="btn btn-outline-primary">Learn More</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Qualification Start -->
+    <div class="container-fluid py-5" id="qualification">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
+                <h1 class="position-absolute text-uppercase text-primary">Expericence</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">My Expericence</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">Web Development</h5>
+                            <p class="mb-2"><strong>Management Asset TI</strong> | <small>2023</small></p>
+                            <p style="text-align: justify;">Membuat dan merancang sistem yang berbasis website untuk
+                                mengelolah aset TI perusahaan PT Sahabat Sakinah Senter, sebagai media pendokumentasian
+                                dan pencatatan aset. Dengan di bangun menggunakan framework Laravel 9, Bootstrap 5, dan
+                                Layout dari adminLTE3</p>
+                            <img src="img/smati.png" alt="" class="img-fluid rounded zoomA" id="myImg">
+                            <!-- <div class="owl-carousel testimonial-carousel">
+                                <div class="text-center">
+                                    <img class="rounded mb-3 zoomA" id="myImg" src="img/smati.png">
+                                </div>
+                                <div class="text-center">
+                                    <img class="rounded mb-3 zoomA" id="myImg" src="img/smati-2.png">
+                                </div>
+                                <div class="text-center">
+                                    <img class="rounded mb-3 zoomA" id="myImg" src="img/smati-3.png">
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">Web Development</h5>
+                            <p class="mb-2"><strong>School Payment</strong> | <small>2021</small></p>
+                            <p style="text-align: justify;">Merancang dan membangun sistem yang berbasis website untuk
+                                pembayaran sekolah Mts Abadiah Pati, untuk mengelolah keuangan sekolah dan pendataan
+                                siswa. Menggunakan framework Laravel 8 dengan layout adminLTE3 dan telah terintegrasi dengan payment gateway midtrans</p>
+                            <img src="img/siakad-mts-abadiah.png" alt="" class="img-fluid rounded zoomA" id="myImg">
+                        </div>
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">IoT Project</h5>
+                            <p class="mb-2"><strong>School Work Project IoT</strong> | <small>2019</small></p>
+                            <p>Membuat perangkat IoT dengan menggunakan mikrokontroller nodeMCU yang di integrasikan
+                                dengan jaringan internet sebagai komunikasi untuk mengontrol perangkat IoT untuk
+                                mengontrol kelistrikan rumah</p>
+                        </div>
+                        <div class="position-relative mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute"
+                                style="top: 2px; left: -32px;"></i>
+                            <h5 class="font-weight-bold mb-1">Network Engineering</h5>
+                            <p class="mb-2"><strong>Network Installation and Configuration</strong> |
+                                <small>2022</small>
+                            </p>
+                            <p>Instalasi jaringan, maintanance jaringan dan konfigurasi server lokal di perusahaan PT
+                                Sahabat Sakinah Senter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Qualification End -->
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5" id="contact">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
+                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
+            </div>
+            <div class="row justify-content-center">
+                <a class="btn btn-outline-dark btn-social mr-2" href="https://wa.me/6289699964780"><i class="fab fa-whatsapp"></i></a>
+                <a class="btn btn-outline-dark btn-social mr-2" href="https://www.instagram.com/abdi_ark/"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-dark btn-social mr-2" href="https://www.facebook.com/hac.abdi/"><i class="fab fa-facebook"></i></a>
+                <a class="btn btn-outline-dark btn-social mr-2" href="https://www.linkedin.com/in/abdi-arkananta-15b044216/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+            <p class="m-0 text-center">&copy; <a class="text-white font-weight-bold" href="#">Abdi Arkananta</a>. Using template</a></p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Scroll to Bottom -->
+    <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            
+            var modal = document.getElementById('myModal');
+    
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById('myImg');
+    
+            $(img).each(function(){
+                console.log(this)
+            });
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                captionText.innerHTML = this.alt;
+            }
+    
+    
+            // When the user clicks on <span> (x), close the modal
+            modal.onclick = function () {
+                img01.className += " out";
+                setTimeout(function () {
+                    modal.style.display = "none";
+                    img01.className = "modal-content";
+                }, 400);
+    
+            }  
+        });
+
+    </script>
+</body>
+
+</html>
